@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeevaa | The Trinity Portfolio</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+    <!-- SEO & Social Meta Tags -->
+    <meta name="description"
+        content="Portfolio of Jeevaananthan BS - Java Developer & Backend Specialist. Explore the Trinity of Skills: Hero, Assassin, Legend.">
+    <meta property="og:title" content="Jeevaa | The Trinity Portfolio">
+    <meta property="og:description"
+        content="Java Developer | Backend & Data Processing Specialist. Enter the Multiverse of Code.">
+    <meta property="og:image" content="assets/bg-spiderman.png"> <!-- Uses Hero BG as preview -->
+    <meta property="og:url" content="https://jeevaananthan.github.io/portfolio">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-51QNQN39ZK"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-51QNQN39ZK');
+    </script>
+</head>
+
+<body>
+
+    <!-- Global Cursor (Logic handles appearance) -->
+    <div id="cursor"></div>
+    <div id="cursor-follower"></div>
+
+    <!-- Effects Container (Click Animations) -->
+    <div id="click-effects"></div>
+
+    <!-- V7 Navigation Header -->
+    <header id="main-nav">
+        <div class="logo">JBS</div>
+        <nav>
+            <ul>
+                <li><a href="#zone-1" data-target="zone-1">The Hero</a></li>
+                <li><a href="#zone-2" data-target="zone-2">The Assassin</a></li>
+                <li><a href="#zone-3" data-target="zone-3">The Legend</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- ZONE 1: SPIDER-MAN (Hero & About) -->
+        <div class="zone zone-spiderman" id="zone-1">
+            <div class="zone-bg-content">
+                <div class="spider-web-bg"></div>
+            </div>
+
+            <section class="hero interactable">
+                <div class="glitch-container">
+                    <div class="glitch-img"></div>
+                </div>
+
+                <h1 class="hero-title">Jeevaananthan BS</h1>
+                <p class="subtitle">
+                    Java Developer | Backend & Data Processing Specialist
+                </p>
+
+                <a href="assets/Jeevaananthan_Resume.pdf" download class="resume-btn">
+                    Download Resume
+                </a>
+            </section>
+
+            <section class="section interactable">
+                <h2>About Me</h2>
+                <p>
+                    I am a Java developer with strong experience in backend development, XML processing,
+                    and structured data transformation. I specialize in converting complex content into
+                    clean, reusable, and scalable outputs. I focus on logic, clarity, and long-term maintainability.
+                    <br><br>
+                    <strong>I am your "Friendly Neighborhood Java Dev", slinging clean code and using my spider-sense to
+                        find bugs.</strong>
+                </p>
+            </section>
+        </div>
+
+        <!-- ZONE 2: JOHN WICK (Projects & Experience) -->
+        <div class="zone zone-johnwick" id="zone-2">
+            <div class="zone-bg-content">
+                <canvas id="rain-canvas"></canvas>
+            </div>
+
+            <section class="section interactable">
+                <h2>Projects</h2>
+                <div class="card-grid">
+                    <div class="card">
+                        <h3>XML Content Processing Engine</h3>
+                        <p>Designed and implemented Java-based logic to parse complex XML structures using DOM and JAXB.
+                        </p>
+                    </div>
+                    <div class="card">
+                        <h3>Reusable XML Utility Framework</h3>
+                        <p>Built reusable utility classes for XML normalization, tag handling, line-breaking, and
+                            content sequencing.</p>
+                    </div>
+                    <div class="card">
+                        <h3>API & Backend Integration</h3>
+                        <p>Worked with backend services and APIs to process, validate, and transform data.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Product & Prototype Ideation</h3>
+                        <p>Actively worked on product ideas involving communication devices and startup concepts.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section interactable">
+                <h2>Experience Timeline</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <span class="time">Early Career</span>
+                        <p>Started with core Java, understanding object-oriented principles, collections, and basic
+                            backend logic.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="time">Professional Growth</span>
+                        <p>Worked extensively on XML parsing, transformation, and content formatting using DOM, JAXB,
+                            and XSLT.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="time">Current Focus</span>
+                        <p>Building scalable backend logic, reusable utilities, and exploring leadership and
+                            system-level thinking.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section interactable">
+                <p style="font-style: italic; color: var(--cyan); margin-top: 20px;">
+                    My projects are "Active Contracts" and "Tactical Operations", executed with "Focus, Commitment, and
+                    Sheer Will."
+                </p>
+            </section>
+        </div>
+
+        <!-- ZONE 3: TENNIS (Leadership & Contact) -->
+        <div class="zone zone-tennis" id="zone-3">
+            <div class="zone-bg-content">
+                <div class="court-lines"></div>
+            </div>
+
+            <section class="section interactable">
+                <h2>Leadership & Vision</h2>
+                <p>
+                    I believe leadership starts with ownership and clarity. I focus on understanding problems deeply,
+                    guiding solutions logically, and helping systems and people work better together.
+                </p>
+            </section>
+
+            <section class="section interactable">
+                <h2>Contact</h2>
+                <p>
+                    Interested in meaningful work, challenging systems, and long-term growth.
+                    Let’s build solutions that matter.
+                </p>
+            </section>
+
+            <div style="text-align: center; margin-bottom: 30px;">
+                <p class="quote">"Consistency builds mastery."</p>
+            </div>
+
+            <footer>
+                <div class="social-links">
+                    <!-- LinkedIn -->
+                    <a href="https://www.linkedin.com/in/jeevaananthan-b-s-70aa841a0" class="social-btn"
+                        aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                            </path>
+                            <rect x="2" y="9" width="4" height="12"></rect>
+                            <circle cx="4" cy="4" r="2"></circle>
+                        </svg>
+                    </a>
+                    <!-- GitHub -->
+                    <a href="https://github.com/jeevaananthan" class="social-btn" aria-label="GitHub" target="_blank"
+                        rel="noopener noreferrer">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                            </path>
+                        </svg>
+                    </a>
+                    <!-- Instagram -->
+                    <a href="https://www.instagram.com/jeeva_bs?igsh=MTYzY3p2Y3FmcXF3NA==" class="social-btn"
+                        aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg>
+                    </a>
+                    <!-- Email -->
+                    <a href="mailto:jeebaananthanbs@gmail.com" class="social-btn" aria-label="Email">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                            </path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                    </a>
+                </div>
+                <p class="copyright">&copy; 2026 Jeevaananthan BS. All Rights Reserved.</p>
+            </footer>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

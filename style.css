@@ -1,0 +1,739 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Cinzel:wght@400;700&family=Orbitron:wght@400;700;900&family=Montserrat:wght@300;400;600&family=Oswald:wght@400;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    cursor: none !important;
+}
+
+body {
+    overflow-x: hidden;
+    background: #000;
+}
+
+/* --- THEME ZONES --- */
+.zone {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    padding: 80px 0;
+    /* Removed side padding for full-width children (footer) */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.zone-bg-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+section {
+    position: relative;
+    z-index: 10;
+    max-width: 1200px;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 60px;
+    padding: 0 20px;
+    /* Added side padding to keep content contained */
+}
+
+/* ZONE 1: SPIDER-VERSE */
+.zone-spiderman {
+    --primary: #ff003c;
+    /* Spider-Verse Red */
+    --accent: #05c3ff;
+    /* Spider-Verse Blue */
+    background:
+        linear-gradient(rgba(26, 11, 16, 0.8), rgba(0, 0, 0, 0.9)),
+        url('assets/bg-spidey.png');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    font-family: 'Bangers', cursive;
+}
+
+.zone-spiderman h1 {
+    font-size: 5rem;
+    text-transform: uppercase;
+    text-shadow: 4px 4px 0px var(--accent);
+    animation: text-glitch 3s infinite;
+}
+
+/* Spider-Verse Glitch Hero Image */
+.glitch-container {
+    position: relative;
+    width: 300px;
+    height: 380px;
+    /* Taller for hair visibility */
+    margin: 0 auto 40px;
+}
+
+.glitch-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('assets/user.png');
+    background-size: cover;
+    background-position: center;
+    /* Adjusted clip-path to show top of head */
+    clip-path: polygon(10% 2%, 100% 0, 95% 100%, 5% 100%);
+    border: 3px solid #fff;
+}
+
+/* The Ghost Layers */
+.glitch-img::before,
+.glitch-img::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    clip-path: inherit;
+    opacity: 0.8;
+}
+
+.glitch-img::before {
+    background-color: var(--primary);
+    mix-blend-mode: hard-light;
+    animation: glitch-anim-1 2.5s infinite linear alternate-reverse;
+}
+
+.glitch-img::after {
+    background-color: var(--accent);
+    mix-blend-mode: hard-light;
+    animation: glitch-anim-2 3s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-anim-1 {
+    0% {
+        clip-path: inset(20% 0 80% 0);
+        transform: translate(-2px, 2px);
+    }
+
+    20% {
+        clip-path: inset(80% 0 10% 0);
+        transform: translate(2px, -2px);
+    }
+
+    40% {
+        clip-path: inset(10% 0 50% 0);
+        transform: translate(2px, 2px);
+    }
+
+    100% {
+        clip-path: inset(50% 0 20% 0);
+        transform: translate(-2px, -2px);
+    }
+}
+
+@keyframes glitch-anim-2 {
+    0% {
+        clip-path: inset(10% 0 60% 0);
+        transform: translate(2px, -2px);
+    }
+
+    20% {
+        clip-path: inset(30% 0 20% 0);
+        transform: translate(-2px, 2px);
+    }
+
+    100% {
+        clip-path: inset(10% 0 80% 0);
+        transform: translate(2px, 2px);
+    }
+}
+
+@keyframes text-glitch {
+
+    0%,
+    100% {
+        transform: translate(0);
+    }
+
+    92% {
+        transform: translate(2px, 2px);
+    }
+
+    94% {
+        transform: translate(-2px, -2px);
+    }
+
+    96% {
+        transform: translate(1px, -1px);
+    }
+
+    98% {
+        transform: translate(-1px, 1px);
+    }
+}
+
+/* ZONE 2: JOHN WICK / TACTICAL */
+.zone-johnwick {
+    --gold: #d4af37;
+    --cyan: #00f0ff;
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)),
+        url('assets/bg-wick.png');
+    background-size: cover;
+    background-position: center;
+    color: #eee;
+    font-family: 'Orbitron', sans-serif;
+    border-top: 2px solid var(--cyan);
+}
+
+.zone-johnwick h2 {
+    color: var(--cyan);
+    text-transform: uppercase;
+    font-size: 3rem;
+    letter-spacing: 5px;
+}
+
+.zone-johnwick .card {
+    background: linear-gradient(135deg, rgba(20, 20, 20, 0.9), rgba(10, 10, 10, 0.95));
+    border: 1px solid #333;
+    border-left: 3px solid var(--gold);
+    padding: 25px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s;
+}
+
+.zone-johnwick .card:hover {
+    border-color: var(--cyan);
+    box-shadow: 0 0 20px rgba(0, 240, 255, 0.3);
+    transform: translateY(-5px);
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+/* ZONE 3: TENNIS / SPORT */
+.zone-tennis {
+    background:
+        linear-gradient(rgba(44, 110, 73, 0.7), rgba(44, 110, 73, 0.9)),
+        url('assets/bg-tennis.png');
+    background-size: cover;
+    background-position: center;
+    font-family: 'Oswald', sans-serif;
+    color: #fff;
+    border-top: 5px solid #fff;
+    padding-bottom: 0;
+    /* Align footer to bottom */
+}
+
+/* --- DETAILED CURSORS --- */
+#cursor {
+    position: fixed;
+    pointer-events: none;
+    z-index: 10000;
+    transform: translate(-50%, -50%);
+    /* Centered by default */
+    width: 64px;
+    height: 64px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: transform 0.1s;
+}
+
+/* Spider-Man Cursor: WEB Icon (Updated from Spider) */
+body[data-cursor="spiderman"] #cursor {
+    width: 80px;
+    /* Larger for web */
+    height: 80px;
+    /* Spider Web SVG */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ff003c' stroke-width='1.5'%3E%3Cpath d='M12 2L12 22M2 12L22 12M4.9 4.9L19.1 19.1M4.9 19.1L19.1 4.9' opacity='0.5'/%3E%3Cpath d='M12 6c-3.3 0-6 2.7-6 6s2.7 6 6 6 6-2.7 6-6-2.7-6-6-6'/%3E%3Cpath d='M12 9c-1.6 0-3 1.4-3 3s1.4 3 3 3 3-1.4 3-3-1.4-3-3-3'/%3E%3C/svg%3E");
+    animation: rotate-web 10s infinite linear;
+}
+
+@keyframes rotate-web {
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+/* John Wick Cursor: Tactical Crosshair/Pistol */
+body[data-cursor="johnwick"] #cursor {
+    width: 64px;
+    height: 64px;
+    /* Tactical Crosshair */
+    background-image: url("data:image/svg+xml,%3Csvg width='64' height='64' viewBox='0 0 64 64' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='32' cy='32' r='10' stroke='%2300f0ff' stroke-width='2' fill='none'/%3E%3Cline x1='32' y1='10' x2='32' y2='22' stroke='%2300f0ff' stroke-width='2'/%3E%3Cline x1='32' y1='42' x2='32' y2='54' stroke='%2300f0ff' stroke-width='2'/%3E%3Cline x1='10' y1='32' x2='22' y2='32' stroke='%2300f0ff' stroke-width='2'/%3E%3Cline x1='42' y1='32' x2='54' y2='32' stroke='%2300f0ff' stroke-width='2'/%3E%3Ccircle cx='32' cy='32' r='1' fill='%23ff0000'/%3E%3C/svg%3E");
+}
+
+/* Tennis Cursor: detailed Racquet */
+body[data-cursor="tennis"] #cursor {
+    width: 64px;
+    height: 64px;
+    /* Tennis Racquet */
+    background-image: url("data:image/svg+xml,%3Csvg width='64' height='64' viewBox='0 0 64 64' fill='none' stroke='%23ffffff' stroke-width='2' xmlns='http://www.w3.org/2000/svg'%3E%3Cg transform='rotate(-45 32 32)'%3E%3Cellipse cx='32' cy='24' rx='12' ry='16' /%3E%3Cpath d='M32 40 L32 56 M28 56 L36 56' /%3E%3Cpath d='M24 24 L40 24 M32 12 L32 36 M26 18 L38 30 M38 18 L26 30' stroke-width='1' opacity='0.5'/%3E%3C/g%3E%3C/svg%3E");
+    transform: translate(-50%, -50%);
+    /* Start unrotated relative to mouse, SVG is rotated inside */
+}
+
+/* --- ANIMATIONS (Impacts) --- */
+.click-anim {
+    position: absolute;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+.click-web {
+    width: 200px;
+    height: 200px;
+    background-image: url("data:image/svg+xml,%3Csvg width='200' height='200' viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' fill='none' stroke-width='2' d='M100 100 L0 0 M100 100 L200 0 M100 100 L0 200 M100 100 L200 200 M100 50 Q150 50 150 100' opacity='0.8'/%3E%3C/svg%3E");
+    transform: translate(-50%, -50%) scale(0);
+    animation: web-shoot 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@keyframes web-shoot {
+    to {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0;
+    }
+}
+
+.muzzle-flash {
+    width: 50px;
+    height: 50px;
+    background: radial-gradient(circle, #fff, #ffaa00, transparent);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    animation: flash 0.1s ease-out forwards;
+    mix-blend-mode: screen;
+}
+
+@keyframes flash {
+    0% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(2);
+    }
+}
+
+.bounce-ball {
+    width: 20px;
+    height: 20px;
+    background: #ccff00;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #ccff00;
+    animation: bounce 1s ease-out forwards;
+}
+
+@keyframes bounce {
+    0% {
+        transform: translate(-50%, -50%);
+    }
+
+    50% {
+        transform: translate(100px, -150px);
+    }
+
+    100% {
+        clip-path: inset(10% 0 80% 0);
+        transform: translate(2px, 2px);
+    }
+}
+
+@keyframes text-glitch {
+
+    0%,
+    100% {
+        transform: translate(0);
+    }
+
+    92% {
+        transform: translate(2px, 2px);
+    }
+
+    94% {
+        transform: translate(-2px, -2px);
+    }
+
+    96% {
+        transform: translate(1px, -1px);
+    }
+
+    98% {
+        transform: translate(-1px, 1px);
+    }
+}
+
+/* ZONE 2: JOHN WICK / TACTICAL */
+.zone-johnwick {
+    --gold: #d4af37;
+    --cyan: #00f0ff;
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)),
+        url('assets/bg-wick.png');
+    background-size: cover;
+    background-position: center;
+    color: #eee;
+    font-family: 'Orbitron', sans-serif;
+    border-top: 2px solid var(--cyan);
+}
+
+.zone-johnwick h2 {
+    color: var(--cyan);
+    text-transform: uppercase;
+    font-size: 3rem;
+    letter-spacing: 5px;
+}
+
+.zone-johnwick .card {
+    background: linear-gradient(135deg, rgba(20, 20, 20, 0.9), rgba(10, 10, 10, 0.95));
+    border: 1px solid #333;
+    border-left: 3px solid var(--gold);
+    padding: 25px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s;
+}
+
+.zone-johnwick .card:hover {
+    border-color: var(--cyan);
+    box-shadow: 0 0 20px rgba(0, 240, 255, 0.3);
+    transform: translateY(-5px);
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+/* ZONE 3: TENNIS / SPORT */
+.zone-tennis {
+    background:
+        linear-gradient(rgba(44, 110, 73, 0.7), rgba(44, 110, 73, 0.9)),
+        url('assets/bg-tennis.png');
+    background-size: cover;
+    background-position: center;
+    font-family: 'Oswald', sans-serif;
+    color: #fff;
+    border-top: 5px solid #fff;
+}
+
+/* --- DETAILED CURSORS --- */
+#cursor {
+    position: fixed;
+    pointer-events: none;
+    z-index: 10000;
+    transform: translate(-50%, -50%);
+    /* Centered by default */
+    width: 64px;
+    height: 64px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: transform 0.1s;
+}
+
+/* Spider-Man Cursor: WEB Icon (Updated from Spider) */
+body[data-cursor="spiderman"] #cursor {
+    width: 80px;
+    /* Larger for web */
+    height: 80px;
+    /* Spider Web SVG */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ff003c' stroke-width='1.5'%3E%3Cpath d='M12 2L12 22M2 12L22 12M4.9 4.9L19.1 19.1M4.9 19.1L19.1 4.9' opacity='0.5'/%3E%3Cpath d='M12 6c-3.3 0-6 2.7-6 6s2.7 6 6 6 6-2.7 6-6-2.7-6-6-6'/%3E%3Cpath d='M12 9c-1.6 0-3 1.4-3 3s1.4 3 3 3 3-1.4 3-3-1.4-3-3-3'/%3E%3C/svg%3E");
+    animation: rotate-web 10s infinite linear;
+}
+
+@keyframes rotate-web {
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+/* John Wick Cursor: Tactical Crosshair/Pistol */
+body[data-cursor="johnwick"] #cursor {
+    width: 64px;
+    height: 64px;
+    /* Tactical Crosshair */
+    background-image: url("data:image/svg+xml,%3Csvg width='64' height='64' viewBox='0 0 64 64' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='32' cy='32' r='10' stroke='%2300f0ff' stroke-width='2' fill='none'/%3E%3Cline x1='32' y1='10' x2='32' y2='22' stroke='%2300f0ff' stroke-width='2'/%3E%3Cline x1='32' y1='42' x2='32' y2='54' stroke='%2300f0ff' stroke-width='2'/%3E%3Cline x1='10' y1='32' x2='22' y2='32' stroke='%2300f0ff' stroke-width='2'/%3E%3Cline x1='42' y1='32' x2='54' y2='32' stroke='%2300f0ff' stroke-width='2'/%3E%3Ccircle cx='32' cy='32' r='1' fill='%23ff0000'/%3E%3C/svg%3E");
+}
+
+/* Tennis Cursor: detailed Racquet */
+body[data-cursor="tennis"] #cursor {
+    width: 64px;
+    height: 64px;
+    /* Tennis Racquet */
+    background-image: url("data:image/svg+xml,%3Csvg width='64' height='64' viewBox='0 0 64 64' fill='none' stroke='%23ffffff' stroke-width='2' xmlns='http://www.w3.org/2000/svg'%3E%3Cg transform='rotate(-45 32 32)'%3E%3Cellipse cx='32' cy='24' rx='12' ry='16' /%3E%3Cpath d='M32 40 L32 56 M28 56 L36 56' /%3E%3Cpath d='M24 24 L40 24 M32 12 L32 36 M26 18 L38 30 M38 18 L26 30' stroke-width='1' opacity='0.5'/%3E%3C/g%3E%3C/svg%3E");
+    transform: translate(-50%, -50%);
+    /* Start unrotated relative to mouse, SVG is rotated inside */
+}
+
+/* --- ANIMATIONS (Impacts) --- */
+.click-anim {
+    position: absolute;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+.click-web {
+    width: 200px;
+    height: 200px;
+    background-image: url("data:image/svg+xml,%3Csvg width='200' height='200' viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' fill='none' stroke-width='2' d='M100 100 L0 0 M100 100 L200 0 M100 100 L0 200 M100 100 L200 200 M100 50 Q150 50 150 100' opacity='0.8'/%3E%3C/svg%3E");
+    transform: translate(-50%, -50%) scale(0);
+    animation: web-shoot 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@keyframes web-shoot {
+    to {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0;
+    }
+}
+
+.muzzle-flash {
+    width: 50px;
+    height: 50px;
+    background: radial-gradient(circle, #fff, #ffaa00, transparent);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    animation: flash 0.1s ease-out forwards;
+    mix-blend-mode: screen;
+}
+
+@keyframes flash {
+    0% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(2);
+    }
+}
+
+.bounce-ball {
+    width: 20px;
+    height: 20px;
+    background: #ccff00;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #ccff00;
+    animation: bounce 1s ease-out forwards;
+}
+
+@keyframes bounce {
+    0% {
+        transform: translate(-50%, -50%);
+    }
+
+    50% {
+        transform: translate(100px, -150px);
+    }
+
+    100% {
+        transform: translate(200px, 0);
+        opacity: 0;
+    }
+}
+
+/* --- V7 NAVIGATION & FOOTER --- */
+#main-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 50px;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.05);
+    /* Very subtle base */
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+#main-nav .logo {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: #fff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+#main-nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+#main-nav a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.7);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s;
+    font-size: 0.9rem;
+}
+
+#main-nav a:hover,
+#main-nav a.active {
+    color: #fff;
+    text-shadow: 0 0 10px #fff;
+}
+
+/* Zone-specific Nav Highlighting */
+body[data-active-zone="spiderman"] #main-nav {
+    border-bottom-color: var(--primary);
+    /* Red border */
+}
+
+body[data-active-zone="johnwick"] #main-nav {
+    border-bottom-color: #00f0ff;
+    /* Cyan border */
+    background: rgba(0, 0, 0, 0.5);
+}
+
+body[data-active-zone="tennis"] #main-nav {
+    border-bottom-color: #ccff00;
+    /* Tennis yellow border */
+}
+
+/* FOOTER UPDATES */
+footer {
+    padding: 30px 20px;
+    background: rgba(255, 255, 255, 0.05);
+    /* Glassy Base */
+    backdrop-filter: blur(10px);
+    width: 100%;
+    margin-top: auto;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.social-links {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    /* Circle */
+    transition: all 0.3s;
+}
+
+.social-btn svg {
+    width: 20px;
+    height: 20px;
+}
+
+.social-btn:hover {
+    background: #fff;
+    color: #000;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+    /* Stronger glow */
+    transform: translateY(-3px);
+    border-color: #fff;
+}
+
+.copyright {
+    font-size: 0.8rem;
+    opacity: 0.5;
+    margin-top: 10px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* --- MOBILE RESPONSIVENESS (V12) --- */
+@media (max-width: 768px) {
+
+    /* Adjust Zone Padding */
+    .zone {
+        padding: 100px 20px 40px !important;
+    }
+
+    /* Navigation Adjustment */
+    #main-nav {
+        padding: 15px 20px;
+        flex-direction: column;
+        gap: 10px;
+        background: rgba(0, 0, 0, 0.8);
+    }
+
+    #main-nav .logo {
+        font-size: 1.2rem;
+    }
+
+    #main-nav ul {
+        gap: 15px;
+        font-size: 0.8rem;
+    }
+
+    /* Typography Scaling */
+    .hero-title {
+        font-size: 3rem;
+    }
+
+    .subtitle {
+        font-size: 1.2rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    /* Grid Stacking for Cards */
+    .card-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    /* Timeline Adjustment */
+    .timeline::before {
+        left: 20px;
+    }
+
+    .timeline-item {
+        margin-left: 40px;
+        width: calc(100% - 40px);
+    }
+
+    .timeline-item::after {
+        left: -26px;
+    }
+
+    /* Footer Adjustment */
+    .social-links {
+        gap: 15px;
+    }
+
+    .social-btn {
+        width: 40px;
+        height: 40px;
+    }
+}
